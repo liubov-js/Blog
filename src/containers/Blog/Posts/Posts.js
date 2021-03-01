@@ -1,29 +1,23 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import articles from '../../../articles.json';
 
 import Post from '../../../components/Post/Post';
 import './Posts.css';
 import * as actionTypes from '../../../store/actions';
+import articles from '../../../articles.json';
 
 class Posts extends Component {
-    state = {
-        posts: [],
+    componentDidMount() {
+        const { loadPosts } = this.props;
+        loadPosts(articles);
     }
 
     render () {
-        let posts;
+        const { posts } = this.props;
+
         return (
             <div className="Posts">
-                {articles.map(post => 
-                    <Post 
-                        key={post.id} 
-                        name={post.name}
-                        image={post.image}
-                        description={post.description}
-                        createdAt={post.createdAt}
-                        onClick={() => this.props.onOpenPost(post.id)}
-                    />)}
+                {posts.map(post => <Post key={post.id} {...post} />)}
             </div>
         );
     }
@@ -31,13 +25,13 @@ class Posts extends Component {
 
 const mapStateToProps = state => {
     return {
-        ctr: state.posts,
+        posts: state.posts,
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        onOpenPost: (id) => dispatch({type: actionTypes.OPEN_POST, post: id}),
+        loadPosts: (articles) => dispatch({type: actionTypes.LOAD_POSTS, payload: articles}),
     };
 };
 
