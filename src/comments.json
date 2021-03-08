@@ -1,0 +1,72 @@
+[
+    {
+        "id": 1,
+        "articleId": 1,
+        "authorFullName": "Bob Dorf",
+        "body": "Awsome article!", 
+        "createdAt": "2021-02-19T11:32:08+00:00"
+    },
+    {
+        "id": 2,
+        "articleId": 1,
+        "authorFullName": "Emilia Wooden",
+        "body": "Interesting post!", 
+        "createdAt": "2021-03-09T11:32:08+00:00"
+    },
+    {
+        "id": 3,
+        "articleId": 2,
+        "authorFullName": "Olivia Palmer",
+        "body": "Interesting article!", 
+        "createdAt": "2020-10-09T11:32:08+00:00"
+    },
+    {
+        "id": 4,
+        "articleId": 2,
+        "authorFullName": "Mark Renton",
+        "body": "Cool!", 
+        "createdAt": "2020-12-11T11:32:08+00:00"
+    },
+    {
+        "id": 5,
+        "articleId": 3,
+        "authorFullName": "Rob Devlin",
+        "body": "Cool post!", 
+        "createdAt": "2020-12-12T11:32:08+00:00"
+    },
+    {
+        "id": 6,
+        "articleId": 3,
+        "authorFullName": "Vanessa Salmon",
+        "body": "Fantastic!", 
+        "createdAt": "2020-12-22T11:32:08+00:00"
+    },
+    {
+        "id": 7,
+        "articleId": 4,
+        "authorFullName": "Marta Brown",
+        "body": "Woow! Really? I'm surprised!", 
+        "createdAt": "2021-01-11T11:32:08+00:00"
+    },
+    {
+        "id": 8,
+        "articleId": 4,
+        "authorFullName": "Carla Bond",
+        "body": "The best post!", 
+        "createdAt": "2021-02-21T11:32:08+00:00"
+    },
+    {
+        "id": 9,
+        "articleId": 5,
+        "authorFullName": "Tommy Gilbert",
+        "body": "Fantastic!", 
+        "createdAt": "2021-02-01T11:32:08+00:00"
+    },
+    {
+        "id": 10,
+        "articleId": 5,
+        "authorFullName": "John Grim",
+        "body": "Awsome!", 
+        "createdAt": "2021-03-01T11:32:08+00:00"
+    }
+]
