@@ -20,11 +20,11 @@ class Comments extends Component {
         const allComments = this.state.comments;
         const postComments = allComments.filter(comment => comment.articleId === Number(postId));
         return (
-            <div>{postComments.map(cur => 
+            <div className="Comments">{postComments.map(cur => 
             <div key={cur.id}>
                 <p>{cur.body}</p>
                 <p>{cur.authorFullName}</p>
-                <p>{cur.createdAt}</p>
+                <p className="Date">{cur.createdAt}</p>
             </div>)}</div>
         );
     }

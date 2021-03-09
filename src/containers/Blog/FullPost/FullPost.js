@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from "react-router";
+import { Link } from 'react-router-dom';
 
+import './FullPost.css';
 import * as actionTypes from '../../../store/actions';
 import articles from '../../../articles.json';
 import Comments from '../Comments/Comments';
@@ -25,12 +27,19 @@ class FullPost extends Component {
 
         return (
             <div>
-                <h1>{post.name}</h1>
-                <img src={post.image} width="80%"/>
-                <p>{post.description}</p>
-                <p>{post.body}</p>
-                <p>{post.createdAt}</p>
-                <Comments postId={id} /> {/* created prop postId */}
+                <Link className="FullPost" to="/">Home</Link>
+                <article className="FullPost">
+                    <h1>{post.name}</h1>
+                    <img className="Image" src={post.image} />
+                    <h3>{post.description}</h3>
+                    <p>{post.body}</p>
+                    <p className="Date">{post.createdAt}</p>
+                </article>
+                <section className="FullPost">
+                    <h5>Comments</h5>
+                    <br />
+                    <Comments postId={id} /> {/* created prop postId */}
+                </section>
             </div>
         );
     }

@@ -1,0 +1,27 @@
+.FullPost {
+    width: 800px;
+    padding: 16px;
+    text-align: center;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 3px #ccc;
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin: auto;
+}
+
+.FullPost a:hover,
+.FullPost a:active,
+.FullPost a.active {
+    color: #fa923f;
+}
+
+.Image {
+    width: 80%;
+}
+
+.Date {
+    margin: 16px 0;
+    color: #ccc;
+}
