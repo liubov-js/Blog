@@ -10,8 +10,8 @@ class Blog extends Component {
                 <div>
                     <Switch>
                         <Route path="/" component={Posts} exact />
-                        {/* <Route render={() => <h1>Not found</h1>} /> */}
-                        <Route path="/article-:id" component={FullPost} />
+                        <Route path="/articles/:id" component={FullPost} />
+                        <Route render={() => <h1>Not found</h1>} />
                     </Switch>
                 </div>
         );

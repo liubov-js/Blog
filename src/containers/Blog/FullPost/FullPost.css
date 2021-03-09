@@ -9,6 +9,8 @@
     flex-flow: row wrap;
     justify-content: center;
     margin: auto;
+    text-decoration: none;
+    color: black;
 }
 
 .FullPost a:hover,
@@ -19,6 +21,10 @@
 
 .Image {
     width: 80%;
+}
+
+.Body {
+    text-align: justify;
 }
 
 .Date {

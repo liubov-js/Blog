@@ -22,3 +22,8 @@
     margin: 16px 0;
     color: #ccc;
 }
+
+.Link {
+    text-decoration: none;
+    color: black;
+}

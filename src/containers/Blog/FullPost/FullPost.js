@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from "react-router";
+import moment from 'moment';
 import { Link } from 'react-router-dom';
 
 import './FullPost.css';
@@ -20,24 +21,22 @@ class FullPost extends Component {
         const id = this.props.match.params.id; // from URL
         const posts = this.props.posts;
         const post = posts.find(post => post.id === Number(id));
-
-        console.log({id, post, posts})
-
+        
         if (!post) return 'Post wasn\'t found';
 
         return (
             <div>
-                <Link className="FullPost" to="/">Home</Link>
+                <Link to="/" className="FullPost">Home</Link>
                 <article className="FullPost">
                     <h1>{post.name}</h1>
                     <img className="Image" src={post.image} />
                     <h3>{post.description}</h3>
-                    <p>{post.body}</p>
-                    <p className="Date">{post.createdAt}</p>
+                    <section className="Body">
+                        {post.body.split('\r\n\r\n').map(str => <p key={str}> {str} </p>)}
+                    </section>
+                    <p className="Date">{moment(post.createdAt).format('YYYY/MM/DD')}</p>
                 </article>
-                <section className="FullPost">
-                    <h5>Comments</h5>
-                    <br />
+                <section >
                     <Comments postId={id} /> {/* created prop postId */}
                 </section>
             </div>

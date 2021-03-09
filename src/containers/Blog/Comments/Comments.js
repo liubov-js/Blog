@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import moment from 'moment';
 
+import './Comments.css';
 import comments from '../../../comments.json';
 
 class Comments extends Component {
@@ -20,12 +22,16 @@ class Comments extends Component {
         const allComments = this.state.comments;
         const postComments = allComments.filter(comment => comment.articleId === Number(postId));
         return (
-            <div className="Comments">{postComments.map(cur => 
-            <div key={cur.id}>
-                <p>{cur.body}</p>
-                <p>{cur.authorFullName}</p>
-                <p className="Date">{cur.createdAt}</p>
-            </div>)}</div>
+            <div className="Comments">
+                <h4>Comments</h4>
+                {postComments.map(cur => 
+                    <div className="Comment" key={cur.id}>
+                        <section>{cur.body}</section>
+                        <p>{cur.authorFullName}</p>
+                        <p className="Date">{moment(cur.createdAt).format('YYYY/MM/DD')}</p>
+                    </div>
+                )}
+            </div>
         );
     }
 }

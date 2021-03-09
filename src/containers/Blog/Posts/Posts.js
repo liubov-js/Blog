@@ -5,7 +5,6 @@ import Post from '../../../components/Post/Post';
 import './Posts.css';
 import * as actionTypes from '../../../store/actions';
 import articles from '../../../articles.json';
-import { Link } from 'react-router-dom';
 
 class Posts extends Component {
     componentDidMount() {
@@ -15,13 +14,10 @@ class Posts extends Component {
 
     render () {
         const { posts } = this.props;
-        const { id } = Number(posts.id);
 
         return (
             <div className="Posts">
-                <Link to={`/article-${id}`}>
-                    {posts.map(post => <Post key={post.id} {...post} />)}
-                </Link>
+                {posts.map(post => <Post key={post.id} {...post} />)}
             </div>
         );
     }
