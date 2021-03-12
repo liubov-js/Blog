@@ -1,4 +1,4 @@
-.Post {
+.PostPreview {
     width: 800px;
     padding: 16px;
     text-align: center;
@@ -9,8 +9,8 @@
     cursor: pointer;
 }
 
-.Post:hover,
-.Post:active {
+.PostPreview:hover,
+.PostPreview:active {
     background-color: #C0DDF5;
 }
 

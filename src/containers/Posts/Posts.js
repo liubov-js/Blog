@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import Post from '../../../components/Post/Post';
+import PostPreview from '../../components/PostPreview/PostPreview';
 import './Posts.css';
-import * as actionTypes from '../../../store/actions';
-import articles from '../../../articles.json';
+import * as actionTypes from '../../store/actions';
+import articles from '../../articles.json';
 
 class Posts extends Component {
     componentDidMount() {
@@ -17,7 +17,7 @@ class Posts extends Component {
 
         return (
             <div className="Posts">
-                {posts.map(post => <Post key={post.id} {...post} />)}
+                {posts.map(post => <PostPreview key={post.id} {...post} />)}
             </div>
         );
     }

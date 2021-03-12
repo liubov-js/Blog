@@ -1,14 +1,19 @@
 import React, { Component } from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-import Blog from './containers/Blog/Blog';
+import Posts from './containers/Posts/Posts';
+import FullPost from './containers/FullPost/FullPost';
 
 class App extends Component {
   render () {
     return (
       <BrowserRouter>
         <div>
-          <Blog />
+          <Switch>
+            <Route path="/" component={Posts} exact />
+            <Route path="/articles/:id" component={FullPost} />
+            <Route render={() => <h1>Not found</h1>} />
+          </Switch>
         </div>
       </BrowserRouter>
     );

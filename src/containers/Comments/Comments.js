@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import moment from 'moment';
 
 import './Comments.css';
-import comments from '../../../comments.json';
+import comments from '../../comments.json';
 
 class Comments extends Component {
     state = {
@@ -18,7 +18,7 @@ class Comments extends Component {
     }
 
     render () {
-        const postId = this.props.postId;
+        const { postId } = this.props.postId;
         const allComments = this.state.comments;
         const postComments = allComments.filter(comment => comment.articleId === Number(postId));
         return (

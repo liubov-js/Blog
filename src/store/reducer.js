@@ -12,11 +12,6 @@ const reducer = (state = initialState, action) => {
             ...state,
             posts: action.payload
         }
-        case actionTypes.OPEN_FULL_POST:
-        return {
-            ...state,
-            fullPost: action.id
-        }
     }
     return state;
 }

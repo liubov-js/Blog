@@ -5,8 +5,8 @@ import moment from 'moment';
 import { Link } from 'react-router-dom';
 
 import './FullPost.css';
-import * as actionTypes from '../../../store/actions';
-import articles from '../../../articles.json';
+import * as actionTypes from '../../store/actions';
+import articles from '../../articles.json';
 import Comments from '../Comments/Comments';
 
 class FullPost extends Component {
@@ -18,8 +18,8 @@ class FullPost extends Component {
     }
 
     render () {
-        const id = this.props.match.params.id; // from URL
-        const posts = this.props.posts;
+        const { id } = this.props.match.params.id; // from URL
+        const { posts } = this.props.posts;
         const post = posts.find(post => post.id === Number(id));
         
         if (!post) return 'Post wasn\'t found';
@@ -32,7 +32,10 @@ class FullPost extends Component {
                     <img className="Image" src={post.image} />
                     <h3>{post.description}</h3>
                     <section className="Body">
-                        {post.body.split('\r\n\r\n').map(str => <p key={str}> {str} </p>)}
+                        {post.body.split('\r\n\r\n').map(str => 
+                            <p key={str}>
+                                {str}
+                            </p>)}
                     </section>
                     <p className="Date">{moment(post.createdAt).format('YYYY/MM/DD')}</p>
                 </article>

@@ -2,11 +2,11 @@ import React from 'react';
 import moment from 'moment';
 import { Link } from 'react-router-dom';
 
-import './Post.css';
+import './PostPreview.css';
 
-const post = (props) => (
+const postPreview = (props) => (
     <Link className="Link" to={`/articles/${props.id}`}>
-        <article className="Post" onClick={props.clicked}>
+        <article className="PostPreview" onClick={props.clicked}>
             <h1>{props.name}</h1>
             <div className="Info">
                 <img className="Image" src={props.image}/>
@@ -17,4 +17,4 @@ const post = (props) => (
     </Link>
 );
 
-export default post;
+export default postPreview;
