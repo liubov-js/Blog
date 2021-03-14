@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import PostPreview from '../../components/PostPreview/PostPreview';
 import './Posts.css';
-import * as actionTypes from '../../store/actions';
+import * as actionCreators from '../../store/actions';
 import articles from '../../articles.json';
 
 class Posts extends Component {
@@ -31,7 +31,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        loadPosts: (articles) => dispatch({type: actionTypes.LOAD_POSTS, payload: articles}),
+        loadPosts: () => dispatch(actionCreators.loadPosts(articles)),
     };
 };
 

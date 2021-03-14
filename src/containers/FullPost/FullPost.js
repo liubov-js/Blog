@@ -5,7 +5,7 @@ import moment from 'moment';
 import { Link } from 'react-router-dom';
 
 import './FullPost.css';
-import * as actionTypes from '../../store/actions';
+import * as actionCreators from '../../store/actions';
 import articles from '../../articles.json';
 import Comments from '../Comments/Comments';
 
@@ -18,8 +18,8 @@ class FullPost extends Component {
     }
 
     render () {
-        const { id } = this.props.match.params.id; // from URL
-        const { posts } = this.props.posts;
+        const { id } = this.props.match.params; // from URL
+        const { posts } = this.props;
         const post = posts.find(post => post.id === Number(id));
         
         if (!post) return 'Post wasn\'t found';
@@ -55,7 +55,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        loadPosts: (articles) => dispatch({type: actionTypes.LOAD_POSTS, payload: articles}),
+        loadPosts: () => dispatch(actionCreators.loadPosts(articles)),
     };
 };
 

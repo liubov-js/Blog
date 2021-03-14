@@ -1,2 +1,3 @@
-export const LOAD_POSTS = 'LOAD_POSTS';
-export const OPEN_FULL_POST = 'OPEN_FULL_POST';
+import * as actionTypes from './actionTypes';
+
+export const loadPosts = (articles) => ({type: actionTypes.LOAD_POSTS, payload: articles});
