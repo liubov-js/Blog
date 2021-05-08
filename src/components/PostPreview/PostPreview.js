@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import './PostPreview.css';
 
 const postPreview = (props) => (
-    <Link className="Link" to={`/articles/${props.id}`}>
+    <Link className="LinkToFullPost" to={`/articles/${props.id}`}>
         <article className="PostPreview" onClick={props.clicked}>
             <h1>{props.name}</h1>
             <div className="Info">

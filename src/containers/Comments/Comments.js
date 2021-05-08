@@ -1,33 +1,36 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import moment from 'moment';
 
 import './Comments.css';
-import comments from '../../comments.json';
+import axios from 'axios';
 
 class Comments extends Component {
     state = {
         comments: [],
     }
 
-    loadComments() {
+    loadComments(comments) {
         this.setState({comments})
     }
 
     componentDidMount() {
-        this.loadComments();
+        const { postId } = this.props;
+        axios.get(`http://localhost:3001/articles/${postId}/comments`)
+            .then((response) => {
+                this.loadComments(response.data);
+            })
     }
 
     render () {
-        const { postId } = this.props.postId;
         const allComments = this.state.comments;
-        const postComments = allComments.filter(comment => comment.articleId === Number(postId));
         return (
             <div className="Comments">
                 <h4>Comments</h4>
-                {postComments.map(cur => 
+                {allComments.map(cur => 
                     <div className="Comment" key={cur.id}>
                         <section>{cur.body}</section>
-                        <p>{cur.authorFullName}</p>
+                        <Link className="Name" to={`/users/${cur.userId}`}>{cur.authorFullName}</Link>
                         <p className="Date">{moment(cur.createdAt).format('YYYY/MM/DD')}</p>
                     </div>
                 )}

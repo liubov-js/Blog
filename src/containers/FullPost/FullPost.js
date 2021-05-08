@@ -3,17 +3,21 @@ import { connect } from 'react-redux';
 import { withRouter } from "react-router";
 import moment from 'moment';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 import './FullPost.css';
 import * as actionCreators from '../../store/actions';
-import articles from '../../articles.json';
 import Comments from '../Comments/Comments';
 
 class FullPost extends Component {
     componentDidMount() {
+        window.scrollTo(0, 0);
         const { loadPosts, posts } = this.props;
         if (!posts.length) {
-            loadPosts(articles);
+            axios.get('http://localhost:3001/articles')
+            .then(function(response) {
+                loadPosts(response.data);
+            })
         } 
     }
 
@@ -25,9 +29,9 @@ class FullPost extends Component {
         if (!post) return 'Post wasn\'t found';
 
         return (
-            <div>
-                <Link to="/" className="FullPost">Home</Link>
-                <article className="FullPost">
+            <div className="Container">
+                <Link to="/" className="HomeLink Block">HOME</Link>
+                <article className="FullPost Block">
                     <h1>{post.name}</h1>
                     <img className="Image" src={post.image} />
                     <h3>{post.description}</h3>
@@ -55,7 +59,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        loadPosts: () => dispatch(actionCreators.loadPosts(articles)),
+        loadPosts: (articles) => dispatch(actionCreators.loadPosts(articles)),
     };
 };
 

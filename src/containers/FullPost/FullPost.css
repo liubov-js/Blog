@@ -1,22 +1,26 @@
-.FullPost {
+.Container {
     width: 800px;
-    padding: 16px;
-    text-align: center;
-    border: 1px solid #eee;
-    box-shadow: 0 2px 3px #ccc;
-    box-sizing: border-box;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    margin: auto;
-    text-decoration: none;
-    color: black;
+    margin: 10px auto;
 }
 
-.FullPost a:hover,
-.FullPost a:active,
-.FullPost a.active {
-    color: #fa923f;
+.FullPost {
+    padding: 16px;
+    text-align: center;
+}
+
+.HomeLink {
+    color: saddlebrown;
+    text-decoration: underline;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+.Block {
+    border: 1px solid #eee;
+    box-shadow: 0 2px 3px #ccc;
 }
 
 .Image {

@@ -1,21 +1,26 @@
 .Comments {
     width: 800px;
-    padding: 10px;
     text-align: center;
     border: 1px solid #eee;
     box-shadow: 0 2px 3px #ccc;
     box-sizing: border-box;
     flex-flow: row wrap;
     justify-content: center;
+    padding: 16px;
     margin: auto;
 }
 
 .Comment {
     padding: 10px 10px 0 10px;
-    margin: auto;
+    margin: 10px;
     text-align: left;
     border: 1px solid #eee;
     box-shadow: 0 2px 3px #ccc;
+}
+
+.Name {
+    text-decoration-line: dashed;
+    color: black;
 }
 
 .Date {

@@ -4,12 +4,15 @@ import { connect } from 'react-redux';
 import PostPreview from '../../components/PostPreview/PostPreview';
 import './Posts.css';
 import * as actionCreators from '../../store/actions';
-import articles from '../../articles.json';
+import axios from 'axios';
 
 class Posts extends Component {
     componentDidMount() {
         const { loadPosts } = this.props;
-        loadPosts(articles);
+        axios.get('http://localhost:3001/articles')
+            .then(function(response) {
+                loadPosts(response.data);
+            })
     }
 
     render () {
@@ -31,7 +34,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        loadPosts: () => dispatch(actionCreators.loadPosts(articles)),
+        loadPosts: (articles) => dispatch(actionCreators.loadPosts(articles)),
     };
 };
 

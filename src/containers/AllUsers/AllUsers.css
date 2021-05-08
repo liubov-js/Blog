@@ -1,0 +1,24 @@
+.AllUsers {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    width: 80%;
+    margin: auto;
+}
+
+.User, .Home-page {
+    width: 800px;
+    margin: 5px;
+    padding: 16px;
+    text-align: center;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 3px #ccc;
+    box-sizing: border-box;
+    background-color: cornsilk;
+}
+
+.Home-page {
+    background-color: cornsilk;
+    color: saddlebrown;
+    font-weight: bold;
+}
