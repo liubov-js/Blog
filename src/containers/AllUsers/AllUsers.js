@@ -12,7 +12,6 @@ class AllUsers extends Component {
         axios.get('http://localhost:3001/users')
             .then(function(response) {
                 loadUsers(response.data);
-                console.log(response);
             })
     }
 
