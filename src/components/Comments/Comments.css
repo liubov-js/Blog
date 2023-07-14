@@ -19,7 +19,7 @@
 }
 
 .Name {
-    text-decoration-line: dashed;
+    text-decoration-line: underline;
     color: black;
 }
 
